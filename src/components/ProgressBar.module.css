@@ -1,0 +1,45 @@
+.progressContainer {
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progressFiller {
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.progressLabel {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  padding: 0 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* For small progress values, position the label outside */
+@media (min-width: 768px) {
+  .progressFiller[style*="width: 10%"] .progressLabel,
+  .progressFiller[style*="width: 9%"] .progressLabel,
+  .progressFiller[style*="width: 8%"] .progressLabel,
+  .progressFiller[style*="width: 7%"] .progressLabel,
+  .progressFiller[style*="width: 6%"] .progressLabel,
+  .progressFiller[style*="width: 5%"] .progressLabel,
+  .progressFiller[style*="width: 4%"] .progressLabel,
+  .progressFiller[style*="width: 3%"] .progressLabel,
+  .progressFiller[style*="width: 2%"] .progressLabel,
+  .progressFiller[style*="width: 1%"] .progressLabel,
+  .progressFiller[style*="width: 0%"] .progressLabel {
+    color: #333;
+    position: absolute;
+    left: 10px;
+  }
+}
